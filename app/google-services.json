@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "185242168211",
+    "project_id": "login-app-aaada",
+    "storage_bucket": "login-app-aaada.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185242168211:android:a8a857f9c3fe31cad1d666",
+        "android_client_info": {
+          "package_name": "com.example.loginapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBncuyUrf4x9TkDf-1QBNpK53-2M4b_4mg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
