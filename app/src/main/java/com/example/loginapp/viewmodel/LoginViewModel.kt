@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.loginapp.data.LoginRepository
 import com.example.loginapp.model.network.Credentials
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -42,14 +41,13 @@ class LoginViewModel: ViewModel() {
         viewModelScope.launch {
 
             try {
-                val response = loginRepository.authenticate(credentials)
+
+                val response = loginRepository.authenticateFirebase(credentials)
 
                 if (response.success) {
-                    delay(3000)
                     _loadingState.value = LoginState.Success
                 }
                 else if (!response.success){
-                    delay(3000)
                     _loadingState.value = LoginState.Error(response.message)
                 }
 

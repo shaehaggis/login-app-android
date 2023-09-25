@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
+import com.example.loginapp.data.FirebaseAuth
 import com.example.loginapp.ui.AppNavigator
 
 class MainActivity : ComponentActivity() {
@@ -11,7 +12,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
-            AppNavigator(navController)
+            val startDestination = if (FirebaseAuth.auth.currentUser == null) {
+                "login"
+            } else {
+                "home"
+            }
+
+            AppNavigator(navController, startDestination)
         }
     }
 }

@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -82,7 +83,8 @@ fun LoginScreenLayout(
                 is LoginState.Loading -> CircularProgressIndicator()
                 is LoginState.Success -> navigateToHome()
                 is LoginState.Error -> Text(
-                        text = "Error logging in... ${currentLoginState.errorMessage}"
+                        text = "Error logging in... ${currentLoginState.errorMessage}",
+                        textAlign = TextAlign.Center
                     )
             }
         }
